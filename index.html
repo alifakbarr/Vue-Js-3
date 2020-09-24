@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>index</title>
+</head>
+<body>
+	<div id="app">
+
+		<!-- <p v-if="show == 'ready'">{{ message }}</p> -->
+		<!-- <p v-if="!show">{{ message }}</p> -->
+		<p v-if="show">{{ message }}</p>
+		<p v-else="show">{{ message2 }}</p>
+		<!-- <p>Result from {{ int1 }} + {{ int2 }} is {{ sum }}</p> -->
+
+		<p>Result from {{ int1 }} + {{ int2 }} is {{ result }}</p>
+		<button v-on:click="sumProcess(2)">Process</button>
+		<br>
+		Killometers : <input type="text" v-model="kilometers">
+		<br>
+		meters : <input type="text" v-model="meters">
+		<br>
+		Input : <input type="text" v-model="message3">
+		<br>
+		Hasil : {{ message3 }}
+		<br>
+		<textarea cols="40" rows="20" v-model="textarea"></textarea>
+		<p style="white-space: pre-line;">{{ textarea }}</p>
+		<br>
+		<input type="radio" v-model="radiobutton" value="opsion-1">Opsion1
+		<input type="radio" v-model="radiobutton" value="opsion-2">Opsion1
+		Hasil : {{ radiobutton }}
+		<br>
+		<label>Watching movie</label>
+		<input type="checkbox" v-model="checkbox" value="Watching-movie">
+		<br>
+		<label>Travelling</label>
+		<input type="checkbox" v-model="checkbox" value="Travelling">
+		<br>
+		<label>Reading</label>
+		<input type="checkbox" v-model="checkbox" value="Reading">
+		My hobbies is : {{checkbox}}
+		<br>
+		<ul>
+			<li v-for="pilih in checkbox">{{ pilih }}</li>
+		</ul>
+		<br>
+		Choice your programming language :
+		<br>
+		<select v-model="select">
+			<option disabled>Choice your language</option>
+			<option value="PHP">PHP</option>
+			<option value="javascript">JavaScript</option>
+			<option value="java">Java</option>
+		</select>
+		<br>
+		Your favorite programming language:
+		{{select}}
+		<hr>
+		Choice your programming language :
+		<br>
+		<select v-model="select2" multiple>
+			<option disabled>Choice your language</option>
+			<option value="PHP">PHP</option>
+			<option value="javascript">JavaScript</option>
+			<option value="java">Java</option>
+		</select>
+		<br>
+		Your favorite programming language:
+		<br>
+		<ul>
+			<li v-for="sel in select2">{{ sel }}</li>
+		</ul>
+		<br>
+		<img v-bind:src="imgFile" width="300px" height="200px">
+		<br>
+		<a v-bind:href="link">about</a>
+		<br>
+		<p v-bind:style="fontku">Nyamuk</p>
+		<br>
+		<hr>
+		<button v-on:click="message4 ='Hy there'">Click</button>
+		<button @click="message4='thanks'">
+		Click Me
+		</button>
+		<button @click="alertInfo">Alert</button>
+
+		<br>
+		{{ message4 }}
+
+	</div>
+</body>
+<script type="text/javascript" src="assets/vendor/vue.js"></script>
+<script type="text/javascript" src="assets/js/app.js"></script>
+</html>

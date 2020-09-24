@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Test</title>
+</head>
+<body>
+<div id="app2">
+<input type="text" @keyup.enter="message='enter'">
+<input type="text" 
+ @keyup.space="spaceKey">
+<br>
+{{ message }}
+<hr>
+<label>add vehicle:</label>
+<input type="text" v-model="content">
+<button @click="addVehicle">add</button>
+<br>
+<ul>
+	<li v-for="(vehicle,index) in vehicles">
+		<button @click="removeVehicle(index)">x</button>
+		{{ vehicle }}
+	</li>
+</ul>
+<hr>
+
+<ul>
+	<li v-for="vehicle2 in vehicles2">
+		Type : {{vehicle2.type}},
+		Brand : {{ vehicle2.brand }},
+		Color : {{ vehicle2.color }}
+	</li>
+</ul>
+<br>
+<ul>
+	<li v-for="value in object">
+		{{ value }}
+	</li>
+</ul>
+
+<greeting></greeting>
+<button-counter></button-counter>
+<blog-post
+	v-for="post in posts" :key="post.id"
+	:post="post"></blog-post>
+
+<input type="text" v-model="isi"> {{ keterangan }}
+</div>
+</body>
+<script type="text/javascript" src="assets/vendor/vue.js"></script>
+<script type="text/javascript" src="assets/js/app2.js"></script>
+</html>
